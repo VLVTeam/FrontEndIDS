@@ -1,0 +1,59 @@
+<app-menu></app-menu>
+<div class="text-center" *ngIf="isLogged; else loggedOut">
+    <h2>Sessione gia aperta</h2>
+</div>
+
+<ng-template #loggedOut>
+    <div class="conteinter d-flex justify-content-center">
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/login">LOGIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLink="/registro">Crea cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/registroCommerciante">Crea commerciante</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/registroCorriere">Crea corriere</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <form #f="ngForm" (ngSubmit)="onRegister()" novalidate>
+                    <div class="form-group">
+                        <label for="email"> email</label>
+                        <input type="text" name="email" id="email" class="form-control" [(ngModel)]="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"> password</label>
+                        <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"> nome</label>
+                        <input type="text" name="nome" id="nome" class="form-control" [(ngModel)]="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"> cognome</label>
+                        <input type="text" name="cognome" id="cognome" class="form-control" [(ngModel)]="cognome"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"> indirizzo</label>
+                        <input type="text" name="indirizzo" id="indirizzo" class="form-control" [(ngModel)]="indirizzo"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                            <i class="fas fa-sign-in-alt"> Crea cliente</i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-template>
