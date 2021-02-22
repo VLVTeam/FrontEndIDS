@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DettaglioCommercianteComponent } from './amministratore/dettaglio-commerciante.component';
+import { DettaglioCorriereComponent } from './amministratore/dettaglio-corriere.component';
+import { ListaCommerciantiDaAccettareComponent } from './amministratore/lista-commercianti-da-accettare.component';
+import { ListaCorrieriDaAccettareComponent } from './amministratore/lista-corrieri-da-accettare.component';
 import { LoginComponent } from './auth/login.component';
 import { RegistroCommercianteComponent } from './auth/registro-commerciante.component';
 import { RegistroCorriereComponent } from './auth/registro-corriere.component';
@@ -18,11 +22,16 @@ const routes: Routes = [
   {path:'registroCommerciante',component:RegistroCommercianteComponent},
   {path:'registroCorriere',component:RegistroCorriereComponent},
 
-
+  {path: 'listaCommerciantiDaAccettare',component: ListaCommerciantiDaAccettareComponent , canActivate:[guard] , data: {expectedRol:['amministratore']}},
+  {path: 'listaCorrieriDaAccettare',component: ListaCorrieriDaAccettareComponent , canActivate:[guard] , data: {expectedRol:['amministratore']}},
+  
   {path: 'listaPuntiDiRitiro',component: ListaPuntiDiRitiroComponent , canActivate:[guard] , data: {expectedRol:['amministratore','commerciante']}},
   {path: 'nuovoPuntoDiRitiro', component : NuovoPuntoDiRitiroComponent ,canActivate:[guard] , data: {expectedRol:['amministratore']}},
   //{path: 'deletePuntoDiRitiro/:id', component : RimuoviPuntoDiRitiroComponent},
+  {path: 'dettaglioCommerciante/:id', component : DettaglioCommercianteComponent},
+  {path: 'dettaglioCorriere/:id', component : DettaglioCorriereComponent},
 
+  
   {path :'**' , redirectTo :'' ,pathMatch: 'full'}
 ];
 

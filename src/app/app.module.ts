@@ -25,6 +25,10 @@ import { IndexComponent } from './index/index.component';
 import { interceptorProvider } from './interceptors/punto-interceptor.service';
 import { RegistroCommercianteComponent } from './auth/registro-commerciante.component';
 import { RegistroCorriereComponent } from './auth/registro-corriere.component';
+import { ListaCommerciantiDaAccettareComponent } from './amministratore/lista-commercianti-da-accettare.component';
+import { DettaglioCommercianteComponent } from './amministratore/dettaglio-commerciante.component';
+import { DettaglioCorriereComponent } from './amministratore/dettaglio-corriere.component';
+import { ListaCorrieriDaAccettareComponent } from './amministratore/lista-corrieri-da-accettare.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,11 @@ import { RegistroCorriereComponent } from './auth/registro-corriere.component';
     MenuComponent,
     IndexComponent,
     RegistroCommercianteComponent,
-    RegistroCorriereComponent
+    RegistroCorriereComponent,
+    ListaCommerciantiDaAccettareComponent,
+    DettaglioCommercianteComponent,
+    DettaglioCorriereComponent,
+    ListaCorrieriDaAccettareComponent
    
   ],
   imports: [

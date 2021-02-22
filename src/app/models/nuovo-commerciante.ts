@@ -1,5 +1,5 @@
 export class NuovoCommerciante {
-
+    id:number;
     email:string;
     password:string;
     categoriaMerceologica:string;

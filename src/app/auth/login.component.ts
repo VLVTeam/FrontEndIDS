@@ -56,8 +56,9 @@ export class LoginComponent implements OnInit {
         this.errMsg= err.error.message;
         this.toastr.error(this.errMsg, 'Fail', {
           timeOut: 3000,  positionClass: 'toast-top-center',
+          
         });
-        
+        this.router.navigate(['/login']);
       }
     );
   }

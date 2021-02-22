@@ -1,4 +1,5 @@
 export class NuovoUtente {
+    id:number;
     email:string;
     password:string;
     nome:string;
@@ -13,5 +14,16 @@ export class NuovoUtente {
         this.nome=nome;
         this.cognome=cognome;
         this.indirizzo=indirizzo;
+    }
+
+
+
+//UTENTE
+    constructorUtente( id :number ,email:string , password:string )
+    {
+        this.id=id;
+        this.email=email;
+        this.password=password;
+       
     }
 }

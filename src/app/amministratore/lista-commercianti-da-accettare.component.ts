@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { PuntoDiRitiro } from '../models/punto-di-ritiro';
-import { PuntoDiRitiroService } from '../service/punto-di-ritiro.service';
+import { NuovoCommerciante } from '../models/nuovo-commerciante';
+import { NuovoUtente } from '../models/nuovo-utente';
+import { CommercianteService } from '../service/commerciante.service';
 import { TokenService } from '../service/token.service';
 
 @Component({
-  selector: 'app-lista-punti-di-ritiro',
-  templateUrl: './lista-punti-di-ritiro.component.html',
-  styleUrls: ['./lista-punti-di-ritiro.component.css']
+  selector: 'app-lista-commercianti-da-accettare',
+  templateUrl: './lista-commercianti-da-accettare.component.html',
+  styleUrls: ['./lista-commercianti-da-accettare.component.css']
 })
-export class ListaPuntiDiRitiroComponent implements OnInit {
-
-  puntiDiRitiro: PuntoDiRitiro[] = [];
-
+export class ListaCommerciantiDaAccettareComponent implements OnInit {
   isAmministratore = false;
   isCliente = false;
   isCommerciante = false;
@@ -20,10 +18,10 @@ export class ListaPuntiDiRitiroComponent implements OnInit {
   ruolo = '';
   isLogged = false;
 
-  constructor(private puntoDiRitiroService: PuntoDiRitiroService, private toastr: ToastrService, private tokenService: TokenService) { }
 
+  commerciantiDaAccettare: NuovoUtente[] = [];
 
-
+  constructor(private commercianteService: CommercianteService, private toastr: ToastrService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
@@ -56,7 +54,7 @@ export class ListaPuntiDiRitiroComponent implements OnInit {
         this.isCorriere = true;
         this.ruolo = 'Corriere';
       }
-      this.caricaPuntiDiRitiro();
+      this.caricaCommerciantiDaAccettare();
     }
     else {
       this.isLogged = false;
@@ -69,10 +67,11 @@ export class ListaPuntiDiRitiroComponent implements OnInit {
 
   }
 
-  caricaPuntiDiRitiro(): void {
-    this.puntoDiRitiroService.lista().subscribe(
+
+  caricaCommerciantiDaAccettare(): void {
+    this.commercianteService.listaCommerciantiDaAccettare().subscribe(
       data => {
-        this.puntiDiRitiro = data;
+        this.commerciantiDaAccettare = data;
       },
       error => {
         console.log(error);
@@ -82,13 +81,15 @@ export class ListaPuntiDiRitiroComponent implements OnInit {
   }
 
 
-  elimina(id: number): void {
-    this.puntoDiRitiroService.rimuovi(id).subscribe(
+
+
+  accetta(id: number): void {
+    this.commercianteService.accettaIscrizioneCommerciante(id).subscribe(
       data => {
         console.log(data);
         this.toastr.success(data.messaggio, "OK", { timeOut: 3000, positionClass: 'toast-top-center' });
 
-        this.caricaPuntiDiRitiro();
+        this.caricaCommerciantiDaAccettare();
       },
 
       err => {
@@ -98,7 +99,4 @@ export class ListaPuntiDiRitiroComponent implements OnInit {
       }
     )
   }
-
-
-
 }

@@ -1,18 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { PuntoDiRitiro } from '../models/punto-di-ritiro';
-import { PuntoDiRitiroService } from '../service/punto-di-ritiro.service';
+import { NuovoUtente } from '../models/nuovo-utente';
+import { CorriereService } from '../service/corriere.service';
 import { TokenService } from '../service/token.service';
 
 @Component({
-  selector: 'app-lista-punti-di-ritiro',
-  templateUrl: './lista-punti-di-ritiro.component.html',
-  styleUrls: ['./lista-punti-di-ritiro.component.css']
+  selector: 'app-lista-corrieri-da-accettare',
+  templateUrl: './lista-corrieri-da-accettare.component.html',
+  styleUrls: ['./lista-corrieri-da-accettare.component.css']
 })
-export class ListaPuntiDiRitiroComponent implements OnInit {
-
-  puntiDiRitiro: PuntoDiRitiro[] = [];
-
+export class ListaCorrieriDaAccettareComponent implements OnInit {
   isAmministratore = false;
   isCliente = false;
   isCommerciante = false;
@@ -20,10 +17,9 @@ export class ListaPuntiDiRitiroComponent implements OnInit {
   ruolo = '';
   isLogged = false;
 
-  constructor(private puntoDiRitiroService: PuntoDiRitiroService, private toastr: ToastrService, private tokenService: TokenService) { }
 
-
-
+  corrieriDaAccettare: NuovoUtente[] = [];
+  constructor(private corriereService : CorriereService ,private toastr: ToastrService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
@@ -56,7 +52,7 @@ export class ListaPuntiDiRitiroComponent implements OnInit {
         this.isCorriere = true;
         this.ruolo = 'Corriere';
       }
-      this.caricaPuntiDiRitiro();
+      this.caricaCorrieriDaAccettare();
     }
     else {
       this.isLogged = false;
@@ -66,13 +62,14 @@ export class ListaPuntiDiRitiroComponent implements OnInit {
       this.isCommerciante = false;
       this.isCorriere = false;
     }
-
   }
 
-  caricaPuntiDiRitiro(): void {
-    this.puntoDiRitiroService.lista().subscribe(
+
+
+  caricaCorrieriDaAccettare(): void {
+    this.corriereService.listaCorrieriDaAccettare().subscribe(
       data => {
-        this.puntiDiRitiro = data;
+        this.corrieriDaAccettare = data;
       },
       error => {
         console.log(error);
@@ -82,13 +79,14 @@ export class ListaPuntiDiRitiroComponent implements OnInit {
   }
 
 
-  elimina(id: number): void {
-    this.puntoDiRitiroService.rimuovi(id).subscribe(
+
+  accetta(id: number): void {
+    this.corriereService.accettaIscrizioneCorriere(id).subscribe(
       data => {
         console.log(data);
         this.toastr.success(data.messaggio, "OK", { timeOut: 3000, positionClass: 'toast-top-center' });
 
-        this.caricaPuntiDiRitiro();
+        this.caricaCorrieriDaAccettare();
       },
 
       err => {
@@ -98,7 +96,5 @@ export class ListaPuntiDiRitiroComponent implements OnInit {
       }
     )
   }
-
-
 
 }

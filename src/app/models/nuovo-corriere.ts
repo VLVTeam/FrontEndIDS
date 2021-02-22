@@ -1,6 +1,6 @@
 export class NuovoCorriere {
 
-
+    id:number;
     
     email:string;
     password:string;
