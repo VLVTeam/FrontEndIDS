@@ -1,0 +1,100 @@
+<app-menu></app-menu>
+
+
+<div class="container">
+
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cognome</th>
+                <th scope="col">Indirizzo</th>
+                <th scope="col"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of listaClienti">
+                <th scope="row">{{cliente.id}}</th>
+                <td>{{cliente.nome}}</td>
+                <td>{{cliente.cognome}}</td>
+                <td>{{cliente.indirizzo}}</td>
+
+                <td><button class="btn btn-outline-success" type="submit" (click)="selezionaCliente(cliente.id)"><i
+                            class="fas fa-check-square"></i> SELEZIONA</button></td>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+
+</div>
+
+
+
+
+<div class="container">
+
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Indirizzo</th>
+                <th scope="col"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let puntoDiRirito of puntiDiRitiro">
+                <th scope="row">{{puntoDiRirito.id}}</th>
+                <td>{{puntoDiRirito.indirizzo}}</td>
+
+                <td><button class="btn btn-outline-success" type="submit" (click)="selezionaPuntoDiiritiro(puntoDiRirito.id)"><i
+                            class="fas fa-check-square"></i> SELEZIONA</button></td>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="descrizione">Descrizione</label>
+                    <input type="text" class="form-control" id="descrizione" name="descrizione"
+                        [(ngModel)]="descrizione" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="codiceRitiro">Codice Di Ritiro</label>
+                    <input type="text" class="form-control" id="codiceRitiro" name="codiceRitiro"
+                        [(ngModel)]="codiceRitiro" required>
+                </div>
+
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                    <i class="fas fa-plus-circle"></i> Crea Ordine</button>
+
+            </form>
+        </div>
+    </div>
+</div>

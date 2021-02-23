@@ -22,23 +22,7 @@ export class NuovoPuntoDiRitiroComponent implements OnInit {
   ngOnInit(): void {
   }
 
- /*  onCreate(): void {
-
-    const  puntoDiRitiro = new PuntoDiRitiro(this.indirizzo);
-    this.puntoDiRitiroService.crea(puntoDiRitiro).subscribe(
-      data => {
-        this.toastr.success("punto di ritiro Creato", "OK", {timeOut:3000,positionClass:"toast-top-center"});
-        this.router.navigate(['/listaPuntiDiRitiro']);
-        
-      },
-      err=>{
-        this.toastr.error(err.error.messaggio,'Fail',{timeOut:3000,positionClass:"toast-top-center"});
-  
-      }
-    )
-
-  } */
-
+ 
 
 
 

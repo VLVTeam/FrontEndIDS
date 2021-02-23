@@ -8,9 +8,16 @@ import { LoginComponent } from './auth/login.component';
 import { RegistroCommercianteComponent } from './auth/registro-commerciante.component';
 import { RegistroCorriereComponent } from './auth/registro-corriere.component';
 import { RegistroComponent } from './auth/registro.component';
+import { DettaglioClienteOrdineComponent } from './commerciante/dettaglio-cliente-ordine.component';
+import { DettaglioCorriereOrdineComponent } from './commerciante/dettaglio-corriere-ordine.component';
+import { DettaglioPuntoDiRitiroOrdineComponent } from './commerciante/dettaglio-punto-di-ritiro-ordine.component';
+import { ListaOrdiniCommercianteComponent } from './commerciante/lista-ordini-commerciante.component';
+import { ListaPromozioniComponent } from './commerciante/lista-promozioni.component';
+import { NuovoOrdineComponent } from './commerciante/nuovo-ordine.component';
 import { PuntoGuardService as guard} from './guards/punto-guard.service';
 import { IndexComponent } from './index/index.component';
 import { ListaPromozioniUtenteComponent } from './promozione/lista-promozioni-utente.component';
+import { NuovaPromozioneComponent } from './promozione/nuova-promozione.component';
 import { ListaPuntiDiRitiroComponent } from './puntoDiRitiro/lista-punti-di-ritiro.component';
 import { NuovoPuntoDiRitiroComponent } from './puntoDiRitiro/nuovo-punto-di-ritiro.component';
 
@@ -32,6 +39,13 @@ const routes: Routes = [
   {path: 'dettaglioCorriere/:id', component : DettaglioCorriereComponent},
 
   
+  {path: 'listaPromozioniCommerciante',component: ListaPromozioniComponent , canActivate:[guard] , data: {expectedRol:['commerciante']}},
+  {path: 'nuovaPromozione',component: NuovaPromozioneComponent , canActivate:[guard] , data: {expectedRol:['commerciante']}},
+  {path: 'listaOrdiniCommerciante',component: ListaOrdiniCommercianteComponent , canActivate:[guard] , data: {expectedRol:['commerciante']}},
+  {path: 'nuovoOrdine',component: NuovoOrdineComponent , canActivate:[guard] , data: {expectedRol:['commerciante']}},
+  {path: 'dettaglioCorriereOrdine/:id', component : DettaglioCorriereOrdineComponent},
+  {path: 'dettaglioClienteOrdine/:id', component : DettaglioClienteOrdineComponent},
+  {path: 'dettaglioPuntoDiRitiroOrdine/:id', component : DettaglioPuntoDiRitiroOrdineComponent},
   {path :'**' , redirectTo :'' ,pathMatch: 'full'}
 ];
 

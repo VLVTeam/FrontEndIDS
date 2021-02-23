@@ -28,7 +28,16 @@
         <!-- amministratore -->
 
 
+        <!-- commerciante -->
+        <li class="nav-item" *ngIf="isCommerciante">
+          <a class="nav-link" routerLink="/listaOrdiniCommerciante"><i class="fas fa-list-alt"></i> Lista Ordini</a>
+        </li>
+        <li class="nav-item" *ngIf="isCommerciante">
+          <a class="nav-link" routerLink="/listaPromozioniCommerciante"><i class="fas fa-list-alt"></i> Lista Promozioni</a>
+        </li>
 
+
+        <!-- comerciante -->
 
 
         <li class="nav-item">

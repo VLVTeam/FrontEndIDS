@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
 
+
 //external
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -29,6 +30,12 @@ import { ListaCommerciantiDaAccettareComponent } from './amministratore/lista-co
 import { DettaglioCommercianteComponent } from './amministratore/dettaglio-commerciante.component';
 import { DettaglioCorriereComponent } from './amministratore/dettaglio-corriere.component';
 import { ListaCorrieriDaAccettareComponent } from './amministratore/lista-corrieri-da-accettare.component';
+import { ListaPromozioniComponent } from './commerciante/lista-promozioni.component';
+import { ListaOrdiniCommercianteComponent } from './commerciante/lista-ordini-commerciante.component';
+import { NuovoOrdineComponent } from './commerciante/nuovo-ordine.component';
+import { DettaglioClienteOrdineComponent } from './commerciante/dettaglio-cliente-ordine.component';
+import { DettaglioCorriereOrdineComponent } from './commerciante/dettaglio-corriere-ordine.component';
+import { DettaglioPuntoDiRitiroOrdineComponent } from './commerciante/dettaglio-punto-di-ritiro-ordine.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +54,13 @@ import { ListaCorrieriDaAccettareComponent } from './amministratore/lista-corrie
     ListaCommerciantiDaAccettareComponent,
     DettaglioCommercianteComponent,
     DettaglioCorriereComponent,
-    ListaCorrieriDaAccettareComponent
+    ListaCorrieriDaAccettareComponent,
+    ListaPromozioniComponent,
+    ListaOrdiniCommercianteComponent,
+    NuovoOrdineComponent,
+    DettaglioClienteOrdineComponent,
+    DettaglioCorriereOrdineComponent,
+    DettaglioPuntoDiRitiroOrdineComponent
    
   ],
   imports: [
@@ -56,8 +69,12 @@ import { ListaCorrieriDaAccettareComponent } from './amministratore/lista-corrie
     BrowserAnimationsModule, 
     ToastrModule.forRoot() ,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+
+
+   
   ],
+ 
   providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })

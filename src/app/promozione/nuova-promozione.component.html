@@ -1,1 +1,30 @@
-<p>nuova-promozione works!</p>
+
+ <app-menu></app-menu>
+
+ <div class="container">
+     <div class="row mt-5">
+         <div class="col-md-4 mx-auto">
+             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                 <div class="form-group">
+                     <label for="descrizione">Descrizione</label>
+                     <input type="text" class="form-control" id="descrizione" name="descrizione" [(ngModel)]="descrizione"
+                         required>
+                 </div>
+                 <div class="form-group">
+                    <label for="dataInizio">Data Inizio</label>
+                    <input type="date" class="form-control" data-date-format="yyyy/MM/dd" id="dataInizio" name="dataInizio" [(ngModel)]="dataInizio"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="dataFine">Data Fine</label>
+                    <input type="date" class="form-control" data-date-format="yyyy/MM/dd" id="dataFine" name="dataFine" [(ngModel)]="dataFine"
+                        required>
+                </div>
+                 <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                     <i class="fas fa-plus-circle"></i> Crea</button>
+                 <button class="btn btn-outline-primary btn-block" routerLink="/listaPromozioniCommerciante">
+                     <i class="fas fa-arrow-alt-circle-left"></i> Indietro</button>
+             </form>
+         </div>
+     </div>
+ </div>
