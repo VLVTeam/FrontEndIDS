@@ -16,10 +16,13 @@ import { ListaPromozioniComponent } from './commerciante/lista-promozioni.compon
 import { NuovoOrdineComponent } from './commerciante/nuovo-ordine.component';
 import { PuntoGuardService as guard} from './guards/punto-guard.service';
 import { IndexComponent } from './index/index.component';
-import { ListaPromozioniUtenteComponent } from './promozione/lista-promozioni-utente.component';
+//import { ListaPromozioniUtenteComponent } from './promozione/lista-promozioni-utente.component';
 import { NuovaPromozioneComponent } from './promozione/nuova-promozione.component';
 import { ListaPuntiDiRitiroComponent } from './puntoDiRitiro/lista-punti-di-ritiro.component';
 import { NuovoPuntoDiRitiroComponent } from './puntoDiRitiro/nuovo-punto-di-ritiro.component';
+import { ListaPromozioniClienteComponent }  from './cliente/lista-promozioni-cliente.component';
+import { DettaglioCommerciantePromozioneComponent } from './cliente/dettaglio-commerciante-promozione.component';
+import { ListaOrdiniClienteComponent } from './cliente/lista-ordini-cliente.component';
 
 
 const routes: Routes = [
@@ -37,8 +40,11 @@ const routes: Routes = [
   //{path: 'deletePuntoDiRitiro/:id', component : RimuoviPuntoDiRitiroComponent},
   {path: 'dettaglioCommerciante/:id', component : DettaglioCommercianteComponent},
   {path: 'dettaglioCorriere/:id', component : DettaglioCorriereComponent},
+  {path: 'dettaglioCommerciantePromozione/:id', component : DettaglioCommerciantePromozioneComponent},
 
-  
+  {path: 'listaPromozioniCliente',component: ListaPromozioniClienteComponent , canActivate:[guard] , data: {expectedRol:['cliente']}},
+  {path: 'listaOrdiniCliente',component: ListaOrdiniClienteComponent , canActivate:[guard] , data: {expectedRol:['cliente']}},
+
   {path: 'listaPromozioniCommerciante',component: ListaPromozioniComponent , canActivate:[guard] , data: {expectedRol:['commerciante']}},
   {path: 'nuovaPromozione',component: NuovaPromozioneComponent , canActivate:[guard] , data: {expectedRol:['commerciante']}},
   {path: 'listaOrdiniCommerciante',component: ListaOrdiniCommercianteComponent , canActivate:[guard] , data: {expectedRol:['commerciante']}},

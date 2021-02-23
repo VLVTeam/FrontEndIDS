@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { NuovaPromozioneComponent } from './promozione/nuova-promozione.component';
-import { ListaPromozioniUtenteComponent } from './promozione/lista-promozioni-utente.component';
+//import { ListaPromozioniUtenteComponent } from './promozione/lista-promozioni-utente.component';
 import { NuovoPuntoDiRitiroComponent } from './puntoDiRitiro/nuovo-punto-di-ritiro.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
@@ -36,12 +36,15 @@ import { NuovoOrdineComponent } from './commerciante/nuovo-ordine.component';
 import { DettaglioClienteOrdineComponent } from './commerciante/dettaglio-cliente-ordine.component';
 import { DettaglioCorriereOrdineComponent } from './commerciante/dettaglio-corriere-ordine.component';
 import { DettaglioPuntoDiRitiroOrdineComponent } from './commerciante/dettaglio-punto-di-ritiro-ordine.component';
+import { ListaPromozioniClienteComponent } from './cliente/lista-promozioni-cliente.component';
+import { DettaglioCommerciantePromozioneComponent } from './cliente/dettaglio-commerciante-promozione.component';
+import { ListaOrdiniClienteComponent } from './cliente/lista-ordini-cliente.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NuovaPromozioneComponent,
-    ListaPromozioniUtenteComponent,
+   // ListaPromozioniUtenteComponent,
     NuovoPuntoDiRitiroComponent,
     ListaPuntiDiRitiroComponent,
     LoginComponent,
@@ -60,7 +63,10 @@ import { DettaglioPuntoDiRitiroOrdineComponent } from './commerciante/dettaglio-
     NuovoOrdineComponent,
     DettaglioClienteOrdineComponent,
     DettaglioCorriereOrdineComponent,
-    DettaglioPuntoDiRitiroOrdineComponent
+    DettaglioPuntoDiRitiroOrdineComponent,
+    ListaPromozioniClienteComponent,
+    DettaglioCommerciantePromozioneComponent,
+    ListaOrdiniClienteComponent
    
   ],
   imports: [

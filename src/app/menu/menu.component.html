@@ -40,6 +40,19 @@
         <!-- comerciante -->
 
 
+
+  <!-- cliente -->
+
+  <li class="nav-item" *ngIf="isCliente">
+    <a class="nav-link" routerLink="/listaOrdiniCliente"><i class="fas fa-list-alt"></i> Lista Ordini</a>
+  </li>
+
+  
+  <li class="nav-item" *ngIf="isCliente">
+    <a class="nav-link" routerLink="/listaPromozioniCliente"><i class="fas fa-list-alt"></i> Lista Promozioni</a>
+  </li>
+
+    <!-- cliente -->
         <li class="nav-item">
           <a class="nav-link" routerLink="/"><i class="fas fa-home"></i> Home</a>
         </li>

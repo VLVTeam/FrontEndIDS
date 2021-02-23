@@ -34,7 +34,7 @@ export class PromozioneService {
 
   public listaPromozioniFiltrate(categoriaMerceologica:string):Observable<Promozione[]>
   {
-    return this.httpClient.get<Promozione[]>(this.promozioneURL+`getPromozioniNonScadute/${categoriaMerceologica}`);
+    return this.httpClient.get<Promozione[]>(this.promozioneURL+`getPromozioniFiltrate/${categoriaMerceologica}`);
   }
 
 }

@@ -7,7 +7,7 @@ export class Ordine {
     idCliente:number;
     idCorriere:number;
     idPuntoDiRitiro:number;
-    stato:boolean;
+    stato:string;
     dataCreazione:Date;
     dataRitiro:Date;
     dataConsegnaPrevista:Date;
