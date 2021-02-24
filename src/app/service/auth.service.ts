@@ -15,6 +15,7 @@ authURL='http://localhost:8080/auth/';
 
   constructor(private httpClient: HttpClient) { }
 
+  
   public nuovoCliente(nuovoUtente: NuovoUtente) : Observable<any>{
     return this.httpClient.post<any>(this.authURL + 'nuovoCliente' , nuovoUtente);
   }
