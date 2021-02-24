@@ -15,7 +15,7 @@
         <th scope="col"></th>
         <th scope="col"></th>
         <th scope="col"></th>
-
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -27,31 +27,14 @@
         <td>{{ordine.dataRitiro}}</td>
         <td>{{ordine.dataConsegnaPrevista}}</td>
         <td>{{ordine.stato}}</td>
+        <td ><button class="btn btn-outline-info"   routerLink="/dettaglioClienteOrdine/{{ordine.idCliente}}"><i class="fas fa-eye"></i> VEDI CLIENTE</button></td>
         <td ><button class="btn btn-outline-info"   routerLink="/dettaglioCommerciante/{{ordine.idCommerciante}}"><i class="fas fa-eye"></i> VEDI COMMERCIANTE</button></td>
-        <td *ngIf="ordine.idCorriere!=null"><button class="btn btn-outline-info"   routerLink="/dettaglioCorriere/{{ordine.idCorriere}}"><i class="fas fa-eye"></i> VEDI CORRIERE</button></td>
         <td *ngIf="ordine.idPuntoDiRitiro!=null"><button class="btn btn-outline-info"   routerLink="/dettaglioPuntoDiRitiroOrdine/{{ordine.idPuntoDiRitiro}}"><i class="fas fa-eye"></i> VEDI PUNTO DI RITIRO</button></td>
-        <td *ngIf="ordine.stato==='PRONTO_PER_IL_RITIRO'"><button class="btn btn-outline-info"   (click)="selezionaOrdine(ordine.id)"><i class="fas fa-check-square"></i>SELEZIONA</button></td>
+        <td *ngIf="ordine.idPuntoDiRitiro!=null"><button class="btn btn-outline-warning"   (click)="deposita(ordine.id)"><i class="fas fa-people-carry"></i>DEPOSITA</button></td>
+        <td *ngIf="ordine.idPuntoDiRitiro==null"><button class="btn btn-outline-warning"   (click)="consegna(ordine.id)"><i class="fas fa-people-carry"></i>CONSEGNA</button></td>
     </tr>
      
     </tbody>
   </table>
-  <form #f="ngForm" (ngSubmit)="ritiraOrdine()" novalidate>
 
-    <div class="form-group">
-        <label for="codiceRitiro"> Codice Ritiro</label>
-        <input type="text" name="codiceRitiro" id="codiceRitiro" class="form-control" [(ngModel)]="codiceRitiro" required>
-    </div>
-   
-    <div class="form-group">
-        <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
-            <i class="fas fa-people-carry"> Ritira </i>
-        </button>
-    </div>
-</form>
 </div>
-
-
-
-
-
-

@@ -53,6 +53,35 @@
   </li>
 
     <!-- cliente -->
+
+
+  <!-- corriere -->
+
+
+    <li class="nav-item" *ngIf="isCorriere">
+      <a class="nav-link" routerLink="/listaOrdiniLiberi"><i class="fas fa-list-alt"></i> Lista Ordini Liberi</a>
+    </li>
+    
+    <li class="nav-item" *ngIf="isCorriere">
+      <a class="nav-link" routerLink="/listaOrdiniDaRitiriare"><i class="fas fa-list-alt"></i> Lista Ordini Da Ritiriare</a>
+    </li>
+
+    <li class="nav-item" *ngIf="isCorriere">
+      <a class="nav-link" routerLink="/listaOrdiniDaDepositare"><i class="fas fa-list-alt"></i> Lista Ordini In Transito</a>
+    </li>
+    
+    <li class="nav-item" *ngIf="isCorriere">
+      <a class="nav-link" routerLink="/listaOrdiniDepositati"><i class="fas fa-list-alt"></i> Lista Ordini Depositati</a>
+    </li>
+
+    <li class="nav-item" *ngIf="isCorriere">
+      <a class="nav-link" routerLink="/listaOrdiniConsegnati"><i class="fas fa-list-alt"></i> Lista Ordini Consegnati</a>
+    </li>
+  <!-- corriere -->
+
+
+
+
         <li class="nav-item">
           <a class="nav-link" routerLink="/"><i class="fas fa-home"></i> Home</a>
         </li>

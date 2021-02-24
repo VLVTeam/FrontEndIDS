@@ -39,6 +39,11 @@ import { DettaglioPuntoDiRitiroOrdineComponent } from './commerciante/dettaglio-
 import { ListaPromozioniClienteComponent } from './cliente/lista-promozioni-cliente.component';
 import { DettaglioCommerciantePromozioneComponent } from './cliente/dettaglio-commerciante-promozione.component';
 import { ListaOrdiniClienteComponent } from './cliente/lista-ordini-cliente.component';
+import { ListaOrdiniLiberiComponent } from './corriere/lista-ordini-liberi.component';
+import { ListaOrdiniDaRitirareComponent } from './corriere/lista-ordini-da-ritirare.component';
+import { ListaOrdiniDaDepositareComponent } from './corriere/lista-ordini-da-depositare.component';
+import { ListaOrdiniDepositatiComponent } from './corriere/lista-ordini-depositati.component';
+import { ListaOrdiniConsegnatiComponent } from './corriere/lista-ordini-consegnati.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +71,12 @@ import { ListaOrdiniClienteComponent } from './cliente/lista-ordini-cliente.comp
     DettaglioPuntoDiRitiroOrdineComponent,
     ListaPromozioniClienteComponent,
     DettaglioCommerciantePromozioneComponent,
-    ListaOrdiniClienteComponent
+    ListaOrdiniClienteComponent,
+    ListaOrdiniLiberiComponent,
+    ListaOrdiniDaRitirareComponent,
+    ListaOrdiniDaDepositareComponent,
+    ListaOrdiniDepositatiComponent,
+    ListaOrdiniConsegnatiComponent
    
   ],
   imports: [

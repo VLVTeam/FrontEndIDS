@@ -23,6 +23,11 @@ import { NuovoPuntoDiRitiroComponent } from './puntoDiRitiro/nuovo-punto-di-riti
 import { ListaPromozioniClienteComponent }  from './cliente/lista-promozioni-cliente.component';
 import { DettaglioCommerciantePromozioneComponent } from './cliente/dettaglio-commerciante-promozione.component';
 import { ListaOrdiniClienteComponent } from './cliente/lista-ordini-cliente.component';
+import { ListaOrdiniLiberiComponent } from './corriere/lista-ordini-liberi.component';
+import { ListaOrdiniDaRitirareComponent } from './corriere/lista-ordini-da-ritirare.component';
+import { ListaOrdiniDaDepositareComponent } from './corriere/lista-ordini-da-depositare.component';
+import { ListaOrdiniDepositatiComponent } from './corriere/lista-ordini-depositati.component';
+import { ListaOrdiniConsegnatiComponent } from './corriere/lista-ordini-consegnati.component';
 
 
 const routes: Routes = [
@@ -52,6 +57,18 @@ const routes: Routes = [
   {path: 'dettaglioCorriereOrdine/:id', component : DettaglioCorriereOrdineComponent},
   {path: 'dettaglioClienteOrdine/:id', component : DettaglioClienteOrdineComponent},
   {path: 'dettaglioPuntoDiRitiroOrdine/:id', component : DettaglioPuntoDiRitiroOrdineComponent},
+
+
+
+  {path: 'listaOrdiniLiberi',component: ListaOrdiniLiberiComponent , canActivate:[guard] , data: {expectedRol:['corriere']}},
+  {path: 'listaOrdiniDaRitiriare',component: ListaOrdiniDaRitirareComponent , canActivate:[guard] , data: {expectedRol:['corriere']}},
+  {path: 'listaOrdiniDaDepositare',component: ListaOrdiniDaDepositareComponent , canActivate:[guard] , data: {expectedRol:['corriere']}},
+  {path: 'listaOrdiniDepositati',component: ListaOrdiniDepositatiComponent , canActivate:[guard] , data: {expectedRol:['corriere']}},
+  {path: 'listaOrdiniConsegnati',component: ListaOrdiniConsegnatiComponent , canActivate:[guard] , data: {expectedRol:['corriere']}},
+
+
+
+
   {path :'**' , redirectTo :'' ,pathMatch: 'full'}
 ];
 

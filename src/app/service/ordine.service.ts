@@ -63,16 +63,16 @@ export class OrdineService {
   }
 
 
-  public setPresaInCaricoOrdine(idOrdine: number, dataPrevistaRitiro: string): Observable<any> {
+  public setPresaInCaricoOrdine(idOrdine: number, dataPrevistaRitiro: Date): Observable<any> {
     return this.httpClient.put(this.ordiniURL + `setPresaInCaricoOrdine/${idOrdine}/${dataPrevistaRitiro}`, null);
   }
 
-  public setDataConsegnaPrevista(idOrdine: number, dataConsegnaPrevista: string): Observable<any> {
+  public setDataConsegnaPrevista(idOrdine: number, dataConsegnaPrevista: Date): Observable<any> {
     return this.httpClient.put(this.ordiniURL + `setDataConsegnaPrevista/${idOrdine}/${dataConsegnaPrevista}`, null);
   }
 
   public setOrdineConsegnato(idOrdine: number): Observable<any> {
-    return this.httpClient.put(this.ordiniURL + `setDataConsegnaPrevista/${idOrdine}`, null);
+    return this.httpClient.put(this.ordiniURL + `setOrdineConsegnato/${idOrdine}`, null);
   }
 
 

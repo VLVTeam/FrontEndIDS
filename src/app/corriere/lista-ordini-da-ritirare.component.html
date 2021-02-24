@@ -27,10 +27,10 @@
         <td>{{ordine.dataRitiro}}</td>
         <td>{{ordine.dataConsegnaPrevista}}</td>
         <td>{{ordine.stato}}</td>
+        <td ><button class="btn btn-outline-info"   routerLink="/dettaglioClienteOrdine/{{ordine.idCliente}}"><i class="fas fa-eye"></i> VEDI CLIENTE</button></td>
         <td ><button class="btn btn-outline-info"   routerLink="/dettaglioCommerciante/{{ordine.idCommerciante}}"><i class="fas fa-eye"></i> VEDI COMMERCIANTE</button></td>
-        <td *ngIf="ordine.idCorriere!=null"><button class="btn btn-outline-info"   routerLink="/dettaglioCorriere/{{ordine.idCorriere}}"><i class="fas fa-eye"></i> VEDI CORRIERE</button></td>
         <td *ngIf="ordine.idPuntoDiRitiro!=null"><button class="btn btn-outline-info"   routerLink="/dettaglioPuntoDiRitiroOrdine/{{ordine.idPuntoDiRitiro}}"><i class="fas fa-eye"></i> VEDI PUNTO DI RITIRO</button></td>
-        <td *ngIf="ordine.stato==='PRONTO_PER_IL_RITIRO'"><button class="btn btn-outline-info"   (click)="selezionaOrdine(ordine.id)"><i class="fas fa-check-square"></i>SELEZIONA</button></td>
+        <td><button class="btn btn-outline-info"   (click)="selezionaOrdine(ordine.id)"><i class="fas fa-check-square"></i>SELEZIONA</button></td>
     </tr>
      
     </tbody>
@@ -38,20 +38,14 @@
   <form #f="ngForm" (ngSubmit)="ritiraOrdine()" novalidate>
 
     <div class="form-group">
-        <label for="codiceRitiro"> Codice Ritiro</label>
-        <input type="text" name="codiceRitiro" id="codiceRitiro" class="form-control" [(ngModel)]="codiceRitiro" required>
+        <label for="dataPrevistaConsegna"> Data Prevista Consegna</label>
+        <input type="date" name="dataPrevistaConsegna" id="dataPrevistaConsegna" class="form-control"  data-date-format="yyyy/MM/dd"[(ngModel)]="dataPrevistaConsegna" required>
     </div>
    
     <div class="form-group">
         <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
-            <i class="fas fa-people-carry"> Ritira </i>
+            <i class="fas fa-people-carry"> Ritira  </i>
         </button>
     </div>
 </form>
 </div>
-
-
-
-
-
-

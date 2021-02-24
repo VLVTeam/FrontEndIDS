@@ -54,7 +54,7 @@ if(this.idOrdine ==null)
   this.toastr.error("ORDINE NON SELEZIONATO", "FAIL", {
     timeOut: 3000, positionClass: 'toast-top-center',
   });
-  this.caricaOrdiniCliente();
+  
 }
 else{
 
@@ -63,6 +63,7 @@ else{
       this.toastr.success(data.messaggio, 'OK', {
         timeOut: 3000, positionClass: 'toast-top-center'
       });
+      this.caricaOrdiniCliente();
     },
     err => {
       this.toastr.error(err.error.messaggio, err.error.messaggio, {
