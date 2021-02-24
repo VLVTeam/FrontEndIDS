@@ -92,10 +92,11 @@ export class DettaglioCorriereComponent implements OnInit {
   }
 
   indietro(): void {
-    if(this.isCliente){
+    if(this.isCliente==true){
       this.router.navigate(['/listaOrdiniCliente']);
     }
-    else if (this.isCorriere){}
+    else if (this.isCorriere==true){}
+    else if (this.isCommerciante==true){this.router.navigate(['/listaOrdiniCommerciante']);}
     else{
     
     this.router.navigate(['/listaCorrieriDaAccettare']);
