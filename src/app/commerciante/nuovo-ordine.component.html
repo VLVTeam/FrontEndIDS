@@ -3,7 +3,9 @@
 
 <div class="container">
 
-
+    
+    <label for="listaClienti" ><b><h2>LISTA CLIENTI:</h2></b></label>
+    
     <table class="table table-dark">
         <thead>
             <tr>
@@ -38,6 +40,9 @@
 
 <div class="container">
 
+    
+    <label for="puntiDiRitiro" ><b><h2>LISTA PUNTI DI RITIRO:</h2></b></label>
+    
 
     <table class="table table-dark">
         <thead>
@@ -85,7 +90,7 @@
                         [(ngModel)]="descrizione" required>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" *ngIf="idPuntoDiRitiro">
                     <label for="codiceRitiro">Codice Di Ritiro</label>
                     <input type="text" class="form-control" id="codiceRitiro" name="codiceRitiro"
                         [(ngModel)]="codiceRitiro" required>
