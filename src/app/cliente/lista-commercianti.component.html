@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Categoria Merceologica</th>
+        <th scope="col">Nome Punto Vendita</th>
+        <th scope="col">Indirizzo Punto Vendita</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let commerciante of commercianti">
+        <th scope="row">{{commerciante.id}}</th>
+        <td>{{commerciante.categoriaMerceologica}}</td>
+        <td>{{commerciante.nomePuntoVendita}}</td>
+        <td>{{commerciante.indirizzoPuntoVendita}}</td>
+
+
+      </tr>
+     
+    </tbody>
+  </table>
+ 
+</div>

@@ -52,6 +52,11 @@
     <a class="nav-link" routerLink="/listaPromozioniCliente"><i class="fas fa-list-alt"></i> Lista Promozioni</a>
   </li>
 
+
+  <li class="nav-item" *ngIf="isCliente">
+    <a class="nav-link" routerLink="/listaCommercianti"><i class="fas fa-list-alt"></i> Lista Commercianti</a>
+  </li>
+  
     <!-- cliente -->
 
 
@@ -82,13 +87,13 @@
 
 
 
-        <li class="nav-item ">
+        <li class="d-flex">
           <a class="nav-link" routerLink="/"><i class="fas fa-home"></i> Home</a>
         </li>
-        <li class="nav-item " *ngIf="!isLogged">
+        <li class="d-flex " *ngIf="!isLogged">
           <a class="nav-link" routerLink="/login"><i class="fas fa-sign-in-alt"></i> Accedi</a>
         </li>
-        <li class="nav-item " *ngIf="isLogged" (click)="onLogOut()">
+        <li class="d-flex" *ngIf="isLogged" (click)="onLogOut()">
           <a class="nav-link" style="cursor: pointer;"><i class="fas fa-door-open"></i> Logout</a>
         </li>
 

@@ -44,6 +44,7 @@ import { ListaOrdiniDaRitirareComponent } from './corriere/lista-ordini-da-ritir
 import { ListaOrdiniDaDepositareComponent } from './corriere/lista-ordini-da-depositare.component';
 import { ListaOrdiniDepositatiComponent } from './corriere/lista-ordini-depositati.component';
 import { ListaOrdiniConsegnatiComponent } from './corriere/lista-ordini-consegnati.component';
+import { ListaCommerciantiComponent } from './cliente/lista-commercianti.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { ListaOrdiniConsegnatiComponent } from './corriere/lista-ordini-consegna
     ListaOrdiniDaRitirareComponent,
     ListaOrdiniDaDepositareComponent,
     ListaOrdiniDepositatiComponent,
-    ListaOrdiniConsegnatiComponent
+    ListaOrdiniConsegnatiComponent,
+    ListaCommerciantiComponent
    
   ],
   imports: [

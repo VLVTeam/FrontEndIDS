@@ -19,9 +19,9 @@ export class CommercianteService {
     return this.httpClient.get<NuovoUtente[]>(this.commercianteURL+'getCommerciantiDaAccettare');
   }
 
-  public listaCommercianti():Observable<NuovoUtente[]>
+  public listaCommercianti():Observable<NuovoCommerciante[]>
   {
-    return this.httpClient.get<NuovoUtente[]>(this.commercianteURL+'getCommercianti');
+    return this.httpClient.get<NuovoCommerciante[]>(this.commercianteURL+'getCommercianti');
   }
   
   public accettaIscrizioneCommerciante(idCommerciante:number):Observable<any>

@@ -56,11 +56,11 @@ export class ListaOrdiniLiberiComponent implements OnInit {
       });
     }
     else {
-   //   var dt = new Date(this.dataPrevistaRitiro);
-   //  var dd = String(dt).padStart(2, '0');
-    //  var MM = String(dt.getMonth() + 1).padStart(2, '0'); //January is 0!
-    //  var yyyy = dt.getFullYear();
-   //  this.stringaData = yyyy + '/' + MM + '/' + dd;
+    //  var dt = new Date(this.dataPrevistaRitiro);
+    // var dd = String(dt).padStart(2, '0');
+     // var MM = String(dt.getMonth() + 1).padStart(2, '0'); //January is 0!
+     // var yyyy = dt.getFullYear();
+    //this.stringaData = yyyy + '-' + MM + '-' + dd;
   //    console.log(dt);
       this.ordineService.setPresaInCaricoOrdine(this.idOrdine, this.dataPrevistaRitiro).subscribe(
         data => {

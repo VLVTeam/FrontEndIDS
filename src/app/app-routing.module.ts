@@ -28,6 +28,7 @@ import { ListaOrdiniDaRitirareComponent } from './corriere/lista-ordini-da-ritir
 import { ListaOrdiniDaDepositareComponent } from './corriere/lista-ordini-da-depositare.component';
 import { ListaOrdiniDepositatiComponent } from './corriere/lista-ordini-depositati.component';
 import { ListaOrdiniConsegnatiComponent } from './corriere/lista-ordini-consegnati.component';
+import { ListaCommerciantiComponent } from './cliente/lista-commercianti.component';
 
 
 const routes: Routes = [
@@ -59,6 +60,11 @@ const routes: Routes = [
   {path: 'dettaglioPuntoDiRitiroOrdine/:id', component : DettaglioPuntoDiRitiroOrdineComponent},
 
 
+
+  {path: 'listaCommercianti',component: ListaCommerciantiComponent , canActivate:[guard] , data: {expectedRol:['cliente']}},
+
+
+  
 
   {path: 'listaOrdiniLiberi',component: ListaOrdiniLiberiComponent , canActivate:[guard] , data: {expectedRol:['corriere']}},
   {path: 'listaOrdiniDaRitiriare',component: ListaOrdiniDaRitirareComponent , canActivate:[guard] , data: {expectedRol:['corriere']}},
