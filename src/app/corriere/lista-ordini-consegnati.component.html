@@ -7,14 +7,12 @@
         <th scope="col">Id</th>
         <th scope="col">Codice Ritiro</th>
         <th scope="col">Descrizione</th>
-        <th scope="col">dataCreazione</th>
-        <th scope="col">dataRitiro</th>
-        <th scope="col">dataConsegnaPrevista</th>
+        <th scope="col">Data Creazione</th>
+        <th scope="col">Data Ritiro</th>
+        <th scope="col">Data Consegna Prevista</th>
         <th scope="col">Stato</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-       
+
+
       </tr>
     </thead>
     <tbody>
@@ -26,12 +24,28 @@
         <td>{{ordine.dataRitiro}}</td>
         <td>{{ordine.dataConsegnaPrevista}}</td>
         <td>{{ordine.stato}}</td>
-        <td ><button class="btn btn-outline-info"   routerLink="/dettaglioClienteOrdine/{{ordine.idCliente}}"><i class="fas fa-eye"></i> VEDI CLIENTE</button></td>
-        <td ><button class="btn btn-outline-info"   routerLink="/dettaglioCommerciante/{{ordine.idCommerciante}}"><i class="fas fa-eye"></i> VEDI COMMERCIANTE</button></td>
-        <td *ngIf="ordine.idPuntoDiRitiro!=null"><button class="btn btn-outline-info"   routerLink="/dettaglioPuntoDiRitiroOrdine/{{ordine.idPuntoDiRitiro}}"><i class="fas fa-eye"></i> VEDI PUNTO DI RITIRO</button></td>
-        
-    </tr>
-     
+
+        <td>
+          <ul>
+            <li class="mb-1 mt-1">
+              <button class="btn btn-outline-info" routerLink="/dettaglioClienteOrdine/{{ordine.idCliente}}"><i
+                  class="fas fa-eye"></i> VEDI CLIENTE</button>
+            </li>
+            <li class="mb-1 mt-1">
+              <button class="btn btn-outline-info" routerLink="/dettaglioCommerciante/{{ordine.idCommerciante}}"><i
+                  class="fas fa-eye"></i> VEDI COMMERCIANTE</button>
+
+            </li>
+            <li class="mb-1 mt-1" *ngIf="ordine.idPuntoDiRitiro!=null">
+              <button class="btn btn-outline-info"
+                routerLink="/dettaglioPuntoDiRitiroOrdine/{{ordine.idPuntoDiRitiro}}"><i class="fas fa-eye"></i> VEDI
+                PUNTO DI RITIRO</button>
+            </li>
+
+          </ul>
+        </td>
+      </tr>
+
     </tbody>
   </table>
 

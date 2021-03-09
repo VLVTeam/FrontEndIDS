@@ -7,14 +7,11 @@
         <th scope="col">Id</th>
         <th scope="col">Codice Ritiro</th>
         <th scope="col">Descrizione</th>
-        <th scope="col">dataCreazione</th>
-        <th scope="col">dataRitiro</th>
-        <th scope="col">dataConsegnaPrevista</th>
+        <th scope="col">Data Creazione</th>
+        <th scope="col">Data Rtiro</th>
+        <th scope="col">Data Consegna Prevista</th>
         <th scope="col">Stato</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
+        
 
       </tr>
     </thead>
@@ -27,11 +24,28 @@
         <td>{{ordine.dataRitiro}}</td>
         <td>{{ordine.dataConsegnaPrevista}}</td>
         <td>{{ordine.stato}}</td>
-        <td ><button class="btn btn-outline-info"   routerLink="/dettaglioCommerciante/{{ordine.idCommerciante}}"><i class="fas fa-eye"></i> VEDI COMMERCIANTE</button></td>
-        <td *ngIf="ordine.idCorriere!=null"><button class="btn btn-outline-info"   routerLink="/dettaglioCorriere/{{ordine.idCorriere}}"><i class="fas fa-eye"></i> VEDI CORRIERE</button></td>
-        <td *ngIf="ordine.idPuntoDiRitiro!=null"><button class="btn btn-outline-info"   routerLink="/dettaglioPuntoDiRitiroOrdine/{{ordine.idPuntoDiRitiro}}"><i class="fas fa-eye"></i> VEDI PUNTO DI RITIRO</button></td>
-        <td *ngIf="ordine.stato==='PRONTO_PER_IL_RITIRO'"><button class="btn btn-outline-info"   (click)="selezionaOrdine(ordine.id)"><i class="fas fa-check-square"></i>SELEZIONA</button></td>
-    </tr>
+       
+        <td>
+          <ul>
+            <li class="mb-1 mt-1">
+              <button class="btn btn-outline-info"   routerLink="/dettaglioCommerciante/{{ordine.idCommerciante}}"><i class="fas fa-eye"></i> VEDI COMMERCIANTE</button>
+            </li>
+            <li class="mb-1 mt-1" *ngIf="ordine.idCorriere!=null">
+              <button class="btn btn-outline-info"   routerLink="/dettaglioCorriere/{{ordine.idCorriere}}"><i class="fas fa-eye"></i> VEDI CORRIERE</button>
+            </li>
+            <li class="mb-1 mt-1" *ngIf="ordine.idPuntoDiRitiro!=null">
+              <button class="btn btn-outline-info"   routerLink="/dettaglioPuntoDiRitiroOrdine/{{ordine.idPuntoDiRitiro}}"><i class="fas fa-eye"></i> VEDI PUNTO DI RITIRO</button>
+            </li>
+
+            <li class="mt-3" *ngIf="ordine.stato==='PRONTO_PER_IL_RITIRO'">
+              <button class="btn btn-outline-success"   (click)="selezionaOrdine(ordine.id)"><i class="fas fa-check-square"></i>SELEZIONA</button>
+            </li>
+
+            
+          </ul>
+        </td>
+    
+      </tr>
      
     </tbody>
   </table>
@@ -47,6 +61,7 @@
             <i class="fas fa-people-carry"> Ritira </i>
         </button>
     </div>
+    <div class="form-group mb-0"> <label></label></div>
 </form>
 </div>
 

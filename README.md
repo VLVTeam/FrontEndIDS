@@ -1,4 +1,4 @@
-# ProgettoIDS - PAWM
+# ProgettoIDS
 Progetto Centro Commerciale in Centro (C3)
 
 

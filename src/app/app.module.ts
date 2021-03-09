@@ -4,9 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { NuovaPromozioneComponent } from './promozione/nuova-promozione.component';
+import { NuovaPromozioneComponent } from './commerciante/nuova-promozione.component';
 //import { ListaPromozioniUtenteComponent } from './promozione/lista-promozioni-utente.component';
-import { NuovoPuntoDiRitiroComponent } from './puntoDiRitiro/nuovo-punto-di-ritiro.component';
+import { NuovoPuntoDiRitiroComponent } from './amministratore/nuovo-punto-di-ritiro.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
@@ -18,7 +18,7 @@ import { ToastrModule } from 'ngx-toastr';
 //
 
 
-import { ListaPuntiDiRitiroComponent } from './puntoDiRitiro/lista-punti-di-ritiro.component';
+import { ListaPuntiDiRitiroComponent } from './amministratore/lista-punti-di-ritiro.component';
 import { LoginComponent } from './auth/login.component';
 import { RegistroComponent } from './auth/registro.component';
 import { MenuComponent } from './menu/menu.component';
@@ -34,10 +34,14 @@ import { ListaPromozioniComponent } from './commerciante/lista-promozioni.compon
 import { ListaOrdiniCommercianteComponent } from './commerciante/lista-ordini-commerciante.component';
 import { NuovoOrdineComponent } from './commerciante/nuovo-ordine.component';
 import { DettaglioClienteOrdineComponent } from './commerciante/dettaglio-cliente-ordine.component';
-import { DettaglioCorriereOrdineComponent } from './commerciante/dettaglio-corriere-ordine.component';
+
+//import { DettaglioCorriereOrdineComponent } from './commerciante/dettaglio-corriere-ordine.component';
+
 import { DettaglioPuntoDiRitiroOrdineComponent } from './commerciante/dettaglio-punto-di-ritiro-ordine.component';
 import { ListaPromozioniClienteComponent } from './cliente/lista-promozioni-cliente.component';
-import { DettaglioCommerciantePromozioneComponent } from './cliente/dettaglio-commerciante-promozione.component';
+
+//import { DettaglioCommerciantePromozioneComponent } from './cliente/dettaglio-commerciante-promozione.component';
+
 import { ListaOrdiniClienteComponent } from './cliente/lista-ordini-cliente.component';
 import { ListaOrdiniLiberiComponent } from './corriere/lista-ordini-liberi.component';
 import { ListaOrdiniDaRitirareComponent } from './corriere/lista-ordini-da-ritirare.component';
@@ -68,10 +72,14 @@ import { ListaCommerciantiComponent } from './cliente/lista-commercianti.compone
     ListaOrdiniCommercianteComponent,
     NuovoOrdineComponent,
     DettaglioClienteOrdineComponent,
-    DettaglioCorriereOrdineComponent,
+   
+    // DettaglioCorriereOrdineComponent,
+   
     DettaglioPuntoDiRitiroOrdineComponent,
     ListaPromozioniClienteComponent,
-    DettaglioCommerciantePromozioneComponent,
+    
+    //DettaglioCommerciantePromozioneComponent,
+    
     ListaOrdiniClienteComponent,
     ListaOrdiniLiberiComponent,
     ListaOrdiniDaRitirareComponent,

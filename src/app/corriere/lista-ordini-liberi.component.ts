@@ -22,6 +22,8 @@ export class ListaOrdiniLiberiComponent implements OnInit {
 
   stringaData: string;
 
+  
+
   constructor(private ordineService: OrdineService, private toastr: ToastrService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
@@ -29,6 +31,8 @@ export class ListaOrdiniLiberiComponent implements OnInit {
     if (this.tokenService.getToken()) {
       this.isLogged = true;
       this.caricaOrdiniLiberi();
+
+     
     }
   }
 
@@ -69,6 +73,7 @@ export class ListaOrdiniLiberiComponent implements OnInit {
             timeOut: 3000, positionClass: 'toast-top-center',
           });
           this.caricaOrdiniLiberi();
+          
         },
         err => {
           console.log(err);

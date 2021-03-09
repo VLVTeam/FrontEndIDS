@@ -3,9 +3,11 @@
 
 <div class="container">
 
-    
-    <label for="listaClienti" ><b><h2>LISTA CLIENTI:</h2></b></label>
-    
+
+    <label for="listaClienti"><b>
+            <h2>LISTA CLIENTI:</h2>
+        </b></label>
+
     <table class="table table-dark">
         <thead>
             <tr>
@@ -40,9 +42,11 @@
 
 <div class="container">
 
-    
-    <label for="puntiDiRitiro" ><b><h2>LISTA PUNTI DI RITIRO:</h2></b></label>
-    
+
+    <label for="puntiDiRitiro"><b>
+            <h2>LISTA PUNTI DI RITIRO:</h2>
+        </b></label>
+
 
     <table class="table table-dark">
         <thead>
@@ -58,8 +62,9 @@
                 <th scope="row">{{puntoDiRirito.id}}</th>
                 <td>{{puntoDiRirito.indirizzo}}</td>
 
-                <td><button class="btn btn-outline-success" type="submit" (click)="selezionaPuntoDiiritiro(puntoDiRirito.id)"><i
-                            class="fas fa-check-square"></i> SELEZIONA</button></td>
+                <td><button class="btn btn-outline-success" type="submit"
+                        (click)="selezionaPuntoDiiritiro(puntoDiRirito.id)"><i class="fas fa-check-square"></i>
+                        SELEZIONA</button></td>
 
             </tr>
 
@@ -98,7 +103,8 @@
 
                 <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
                     <i class="fas fa-plus-circle"></i> Crea Ordine</button>
-
+                    <button class="btn btn-outline-primary btn-block" routerLink="/listaOrdiniCommerciante">
+                        <i class="fas fa-arrow-alt-circle-left"></i> Indietro</button>
             </form>
         </div>
     </div>
