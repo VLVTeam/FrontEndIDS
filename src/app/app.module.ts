@@ -96,9 +96,6 @@ import { ListaCommerciantiComponent } from './cliente/lista-commercianti.compone
     ToastrModule.forRoot() ,
     HttpClientModule,
     FormsModule,
-
-
-   
   ],
  
   providers: [interceptorProvider],
